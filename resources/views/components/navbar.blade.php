@@ -1,3 +1,4 @@
+<div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
 <!-- begin:: Header -->
 <div id="kt_header" class="kt-header kt-grid kt-grid--ver  kt-header--fixed ">
 
@@ -6,8 +7,7 @@
     <div class="kt-header-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_header_menu_wrapper">
         <div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout- ">
             <ul class="kt-menu__nav ">
-                <li class="kt-menu__item  kt-menu__item--active " aria-haspopup="true"><a href="index.html" class="kt-menu__link "><span class="kt-menu__link-text">Dashboard</span></a></li>
-                <li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--rel" data-ktmenu-submenu-toggle="click" aria-haspopup="true"><a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span class="kt-menu__link-text"></span><i class="kt-menu__ver-arrow la la-angle-right"></i></a>
+                <li class="kt-menu__item  kt-menu__item--active " aria-haspopup="true"><a href="/" class="kt-menu__link "><span class="kt-menu__link-text">Dashboard</span></a></li>
                 </li>
             </ul>
         </div>
@@ -37,7 +37,6 @@
                 </div>
             </div>
         </div>
-
         <!--end: Search -->
 
         <!--begin: User bar -->
@@ -45,7 +44,7 @@
             <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="10px,0px">
                 <span class="kt-hidden kt-header__topbar-welcome">Hi,</span>
                 <span class="kt-hidden kt-header__topbar-username">Nick</span>
-                <img class="kt-hidden" alt="Pic" src="{{ asset('vendor') }}/media/users/300_21.jpg" />
+                <img class="kt-hidden" alt="Pic" src="{{ asset('vendor') }}/media/users/300_21.jpg"/>
                 <span class="kt-header__topbar-icon"><i class="flaticon2-user-outline-symbol"></i></span>
             </div>
             <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-xl">
@@ -53,8 +52,7 @@
                 <!--begin: Head -->
                 <div class="kt-user-card kt-user-card--skin-light kt-notification-item-padding-x">
                     <div class="kt-user-card__avatar">
-                        <img class="kt-hidden-" alt="Pic" src="{{ asset('vendor') }}/media/users/300_25.jpg" />
-
+                        <img class="kt-hidden-" alt="Pic" src="{{ asset('vendor') }}/media/users/300_25.jpg" />3
                         <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                         <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold kt-hidden"></span>
                     </div>
@@ -65,28 +63,22 @@
                         <span class="btn btn-label-primary btn-sm btn-bold btn-font-md">23 messages</span>
                     </div>
                 </div>
-
                 <!--end: Head -->
 
                 <!--begin: Navigation -->
                 <div class="kt-notification">
-                    
-                    
                     <div class="kt-notification__custom kt-space-between">
+                        <a href="/login" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Login</a>
                         <a href="custom/user/login-v2.html" target="_blank" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
-                        
                     </div>
                 </div>
-
                 <!--end: Navigation -->
             </div>
         </div>
         <!--end: User bar -->
         
     </div>
-
     <!-- end:: Header Topbar -->
 </div>
-
 <!-- end:: Header -->
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">

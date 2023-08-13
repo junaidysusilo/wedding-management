@@ -6,7 +6,7 @@
 	<head>
 		<base href="../../../">
 		<meta charset="utf-8" />
-		<title>Metronic | Login Page v3</title>
+		<title>Wedding Management</title>
 		<meta name="description" content="Login page example">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -55,10 +55,15 @@
 								<form class="kt-form" action="/login" method="post">
                                     @csrf
 									<div class="input-group">
-										<input class="form-control" type="text" placeholder="Email" name="email" autocomplete="off" autofocus>
+										<input class="form-control" type="text" placeholder="Email" name="email" id="email" autocomplete="off" autofocus>
+										{{-- @error('email')
+											<div class="invalid-feedback">
+												{{ $message }}
+											</div>
+										@enderror --}}
 									</div>
 									<div class="input-group">
-										<input class="form-control" type="password" placeholder="Password" name="password">
+										<input class="form-control" type="password" placeholder="Password" name="password" id="password">
 									</div>
 									<div class="row kt-login__extra">
 										<div class="col">
