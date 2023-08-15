@@ -17,11 +17,11 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('index');
-});
+})->middleware('auth');
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 // Route::get('/users', [UserController::class, 'index'])->name('users.index');
-Route::resource('/users', UserController::class);
+Route::resource('/users', UserController::class)->names('users')->middleware('auth');

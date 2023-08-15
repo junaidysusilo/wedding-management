@@ -9,38 +9,34 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('login.index', [
-            'title' => 'Login'
-
-        ]);
+        return view('login.index');
     }
 
     public function authenticate(Request $request)
     {
-        $request->validate([
+        $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
-    dd('berhasil login');
 
-        // if (Auth::attempt($credentials)) {
-        //     $request->session()->regenerate();
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
 
-        //     return redirect()->intended('dashboard');
-        // };
+            return redirect()->intended('/');
+        }
 
-        // return back()->with('loginError', 'Login failed!');
+        return back()->with('loginError', 'Login failed!');
     }
 
-    // public function logout()
-    // {
-    //     Auth::logout();
+    public function logout()
+    {
+        Auth::logout();
 
-    //     request()->session()->invalidate();
+        request()->session()->invalidate();
 
-    //     request()->session()->regenerateToken();
+        request()->session()->regenerateToken();
 
-    //     return redirect('/login');
-    // }
+        return redirect('/login');
+    }
 }

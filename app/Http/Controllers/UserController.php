@@ -34,4 +34,41 @@ class UserController extends Controller
 
         return redirect('/users')->with('success', 'New user has been added');
     }
+
+    public function show(User $user)
+    {
+        // return view('users.edit', [
+        //     'user' => $user
+        // ]);
+    }
+
+    public function edit(User $user)
+    {
+        return view('users.edit', [
+            'user' => $user,
+            'users' => User::all()
+        ]);
+    }
+
+    public function update(Request $request, User $user)
+    {
+        $rules = [
+            'name' => 'required|max:255',
+            'email' => 'required'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        User::where('id', $user->id)
+            ->update($validatedData);
+
+        return redirect('/users')->with('success', 'User has been updated');
+    }
+
+    public function destroy(User $user)
+    {
+
+        User::destroy($user->id);
+        return redirect('/users')->with('success', 'User has been deleted!');
+    }
 }

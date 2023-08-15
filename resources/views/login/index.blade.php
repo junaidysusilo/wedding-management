@@ -52,20 +52,20 @@
 								<div class="kt-login__head">
 									<h3 class="kt-login__title">Sign In To Admin</h3>
 								</div>
-								<form class="kt-form" action="/login" method="post">
+								{{-- @if (session()->has('loginError'))
+								<div class="alert alert-success col-lg-9 mt-3" role="alert">
+									{{ session('loginError') }}
+								</div>
+								@endif --}}
+								<form class="kt-form" action="/" method="post">
                                     @csrf
 									<div class="input-group">
-										<input class="form-control" type="text" placeholder="Email" name="email" id="email" autocomplete="off" autofocus>
-										{{-- @error('email')
-											<div class="invalid-feedback">
-												{{ $message }}
-											</div>
-										@enderror --}}
+										<input class="form-control" type="email" placeholder="Email" name="email" id="email" autofocus>
 									</div>
 									<div class="input-group">
 										<input class="form-control" type="password" placeholder="Password" name="password" id="password">
 									</div>
-									<div class="row kt-login__extra">
+									{{-- <div class="row kt-login__extra">
 										<div class="col">
 											<label class="kt-checkbox">
 												<input type="checkbox" name="remember"> Remember me
@@ -73,15 +73,15 @@
 											</label>
 										</div>
 										<div class="col kt-align-right">
-											<a href="javascript:;" id="kt_login_forgot" class="kt-login__link">Forget Password ?</a>
+											<a href="javascript:;" id="kt_login_forgot" class="kt-login__link">Forget Password?</a>
 										</div>
-									</div>
+									</div> --}}
 									<div class="kt-login__actions">
 										<button id="kt_login_signin_submit" class="btn btn-brand btn-elevate kt-login__btn-primary">Sign In</button>
 									</div>
 								</form>
 							</div>
-							<div class="kt-login__signup">
+							{{-- <div class="kt-login__signup">
 								<div class="kt-login__head">
 									<h3 class="kt-login__title">Sign Up</h3>
 									<div class="kt-login__desc">Enter your details to create your account:</div>
@@ -113,8 +113,8 @@
 										<button id="kt_login_signup_cancel" class="btn btn-light btn-elevate kt-login__btn-secondary">Cancel</button>
 									</div>
 								</form>
-							</div>
-							<div class="kt-login__forgot">
+							</div> --}}
+							{{-- <div class="kt-login__forgot">
 								<div class="kt-login__head">
 									<h3 class="kt-login__title">Forgotten Password ?</h3>
 									<div class="kt-login__desc">Enter your email to reset your password:</div>
@@ -128,14 +128,14 @@
 										<button id="kt_login_forgot_cancel" class="btn btn-light btn-elevate kt-login__btn-secondary">Cancel</button>
 									</div>
 								</form>
-							</div>
-							<div class="kt-login__account">
+							</div> --}}
+							{{-- <div class="kt-login__account">
 								<span class="kt-login__account-msg">
 									Don't have an account yet ?
 								</span>
 								&nbsp;&nbsp;
 								<a href="javascript:;" id="kt_login_signup" class="kt-login__account-link">Sign Up!</a>
-							</div>
+							</div> --}}
 						</div>
 					</div>
 				</div>

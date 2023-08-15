@@ -2,8 +2,14 @@
 
 @section('container')
 
+@if (session()->has('success'))
+    <div class="alert alert-success col-lg-9 mt-3" role="alert">
+        {{ session('success') }}
+    </div>
+@endif
+
 	<!-- begin:: Content -->
-	<div class="kt-portlet kt-portlet--mobile">
+	<div class="kt-portlet kt-portlet--mobile mt-3">
 		<div class="kt-portlet__head kt-portlet__head--lg">
 			<div class="kt-portlet__head-label">
 				<span class="kt-portlet__head-icon">
@@ -31,16 +37,16 @@
 					<table class="kt-datatable__table" style="display: block;">
 						<thead class="kt-datatable__head">
 							<tr class="kt-datatable__row" style="left: 0px;">
-								<th data-field="Country" class="kt-datatable__cell kt-datatable__cell--sort">
-									<span style="width: 30px;">No.</span>
+								<th data-field="No" class="kt-datatable__cell kt-datatable__cell--sort">
+									<span style="width: 30px;">No</span>
 								</th>
-								<th data-field="Country" class="kt-datatable__cell kt-datatable__cell--sort">
+								<th data-field="Name" class="kt-datatable__cell kt-datatable__cell--sort">
 									<span style="width: 110px;">Name</span>
 								</th>
-								<th data-field="ShipDate" class="kt-datatable__cell kt-datatable__cell--sort">
+								<th data-field="Email" class="kt-datatable__cell kt-datatable__cell--sort">
 									<span style="width: 210px;">Email</span>
 								</th>
-								<th data-field="Actions" data-autohide-disabled="false" class="kt-datatable__cell kt-datatable__cell--sort">
+								<th data-field="Action" data-autohide-disabled="false" class="kt-datatable__cell kt-datatable__cell--sort">
 									<span style="width: 110px;">Action</span>
 								</th>
 							</tr>
@@ -49,7 +55,7 @@
 
 						@foreach ($users as $user)
 						<tr data-row="0" class="kt-datatable__row" style="left: 0px;">
-							<td data-field="Name" class="kt-datatable__cell">
+							<td data-field="No" class="kt-datatable__cell">
 								<span style="width: 30px;">{{ $loop->iteration }}</span>
 							</td>
 							<td data-field="Name" class="kt-datatable__cell">
@@ -58,14 +64,17 @@
 							<td data-field="Email" class="kt-datatable__cell">
 								<span style="width: 210px;">{{ $user->email }}</span>
 							</td>
-							<td data-field="Actions" data-autohide-disabled="false" class="kt-datatable__cell">
+							<td data-field="Action" data-autohide-disabled="false" class="kt-datatable__cell">
 								<span style="width: 110px;">
-									<a title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-md">	
-										<i class="la la-edit"></i>				
-									</a>				
-									<a title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-md">			
-										<i class="la la-trash"></i>			
-									</a>				
+									<a href="/users/{{ $user->id }}/edit" title="Edit" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
+									<form action="/users/{{ $user->id }}" method="post" class="d-inline">
+										@csrf
+										@method('delete')
+										<button title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-md" onclick="return confirm('Are you sure?')"><i class="la la-trash"></i>
+										</button>
+									</form>				
+									{{-- <a href="/users" title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-trash"></i>			
+									</a>		 --}}
 								</span>
 							</td>
 						</tr>
