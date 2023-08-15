@@ -7,7 +7,7 @@
     <div class="kt-container  kt-container--fluid ">
         <div class="kt-subheader__main">
             <h3 class="kt-subheader__title">
-                Welcome back, 
+                Welcome back, {{ auth()->user()->name }}
             </h3>
         </div>        
     </div>

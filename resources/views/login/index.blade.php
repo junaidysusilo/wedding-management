@@ -21,8 +21,8 @@
 		<!--end::Page Custom Styles -->
 
 		<!--begin::Global Theme Styles(used by all pages) -->
-		<link href="{{ asset('vendor') }}/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('vendor') }}/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('vendor') }}/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
+		<link href="{{ asset('vendor') }}/css/style.bundle.css" rel="stylesheet" type="text/css"/>
 
 		<!--end::Global Theme Styles -->
 

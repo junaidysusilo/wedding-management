@@ -4,18 +4,18 @@
 var KTLoginV1 = function () {
 	var login = $('#kt_login');
 
-	var showErrorMsg = function(form, type, msg) {
-        var alert = $('<div class="alert alert-bold alert-solid-' + type + ' alert-dismissible" role="alert">\
-			<div class="alert-text">'+msg+'</div>\
+	var showErrorMsg = function (form, type, msg) {
+		var alert = $('<div class="alert alert-bold alert-solid-' + type + ' alert-dismissible" role="alert">\
+			<div class="alert-text">'+ msg + '</div>\
 			<div class="alert-close">\
                 <i class="flaticon2-cross kt-icon-sm" data-dismiss="alert"></i>\
             </div>\
 		</div>');
 
-        form.find('.alert').remove();
-        alert.prependTo(form);
-        KTUtil.animateClass(alert[0], 'fadeIn animated');
-    }
+		form.find('.alert').remove();
+		alert.prependTo(form);
+		KTUtil.animateClass(alert[0], 'fadeIn animated');
+	}
 
 	// Private Functions
 	var handleSignInFormSubmit = function () {
@@ -54,7 +54,7 @@ var KTLoginV1 = function () {
 					setTimeout(function () {
 						KTApp.unprogress(btn[0]);
 						showErrorMsg(form, 'danger', 'Incorrect username or password. Please try again.');
-					}, 2000);
+					}, 500);
 				}
 			});
 		});

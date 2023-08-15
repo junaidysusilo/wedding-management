@@ -57,7 +57,7 @@
                         <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold kt-hidden"></span>
                     </div>
                     <div class="kt-user-card__name">
-                        {{-- Welcome, {{ auth()->user()->name }} --}}
+                        Welcome, {{ auth()->user()->name }}
                     </div>
                     <div class="kt-user-card__badge">
                         <span class="btn btn-label-primary btn-sm btn-bold btn-font-md">23 messages</span>
