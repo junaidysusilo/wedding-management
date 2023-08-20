@@ -12,7 +12,7 @@
     </div>
 
     <!--begin::Form-->
-    <form method="post" action="/users/{{ $user->id }}" class="kt-form">
+    <form method="post" action="{{ route('users.update', ['user' => $user->id]) }}" class="kt-form">
         @csrf
         @method('put')
         <div class="kt-portlet__body">
@@ -31,7 +31,7 @@
         <div class="kt-portlet__foot">
             <div class="kt-form__actions">
                 <button type="submit" class="btn btn-primary">Edit</button>
-                <button type="reset" class="btn btn-secondary">Cancel</button>
+                <a href="{{ route('users.index') }}" class="btn btn-secondary">Back</a>
             </div>
         </div>
     </form>

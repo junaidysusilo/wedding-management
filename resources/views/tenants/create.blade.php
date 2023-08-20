@@ -6,13 +6,13 @@
     <div class="kt-portlet__head">
         <div class="kt-portlet__head-label">
             <h3 class="kt-portlet__head-title">
-                Add New User
+                Add New Tenant
             </h3>
         </div>
     </div>
 
     <!--begin::Form-->
-    <form method="post" action="{{ route('users.store') }}" class="kt-form">
+    <form method="post" action="{{ route('tenants.store') }}" class="kt-form">
         @csrf
         <div class="kt-portlet__body">
             <div class="form-group">
@@ -30,7 +30,7 @@
         <div class="kt-portlet__foot">
             <div class="kt-form__actions">
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a href="{{ route('users.index') }}" class="btn btn-secondary">Back</a>
+                <a href="{{ route('tenants.index') }}" class="btn btn-secondary">Back</a>
             </div>
         </div>
     </form>

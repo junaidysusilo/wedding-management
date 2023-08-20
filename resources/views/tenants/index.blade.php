@@ -16,14 +16,14 @@
 					<i class="kt-font-brand flaticon2-line-chart"></i>
 				</span>
 				<h3 class="kt-portlet__head-title">
-					List User
+					List Tenant
 				</h3>
 			</div>
 			<div class="kt-portlet__head-toolbar">
 				<div class="kt-portlet__head-wrapper">
 					<div class="dropdown dropdown-inline">
-						<a href="{{ route('users.create') }}" style="text-decoration: none"><button type="button" class="btn btn-brand btn-icon-sm" >
-							<i class="flaticon2-plus"></i> Create New User
+						<a href="{{ route('tenants.create') }}" style="text-decoration: none"><button type="button" class="btn btn-brand btn-icon-sm" >
+							<i class="flaticon2-plus"></i> Add New Tenant
 						</button></a>
 					</div>
 				</div>
@@ -53,21 +53,21 @@
 						</thead>
 						<tbody class="kt-datatable__body" style="">
 
-						@foreach ($users as $user)
+						@foreach ($tenants as $tenant)
 						<tr data-row="0" class="kt-datatable__row" style="left: 0px;">
 							<td data-field="No" class="kt-datatable__cell">
 								<span style="width: 30px;">{{ $loop->iteration }}</span>
 							</td>
 							<td data-field="Name" class="kt-datatable__cell">
-								<span style="width: 110px;">{{ $user->name }}</span>
+								<span style="width: 110px;">{{ $tenant->name }}</span>
 							</td>
 							<td data-field="Email" class="kt-datatable__cell">
-								<span style="width: 210px;">{{ $user->email }}</span>
+								<span style="width: 210px;">{{ $tenant->email }}</span>
 							</td>
 							<td data-field="Action" data-autohide-disabled="false" class="kt-datatable__cell">
 								<span style="width: 110px;">
-									<a href="{{ route('users.edit', ['user' => $user->id]) }}" title="Edit" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
-									<form action="{{ route('users.destroy', ['user' => $user->id]) }}" method="post" class="d-inline">
+									<a href="{{ route('tenants.edit', ['tenant' => $tenant->id]) }}" title="Edit" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
+									<form action="{{ route('tenants.destroy', ['tenant' => $tenant->id]) }}" method="post" class="d-inline">
 										@csrf
 										@method('delete')
 										<button title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-md" onclick="return confirm('Are you sure?')"><i class="la la-trash"></i>

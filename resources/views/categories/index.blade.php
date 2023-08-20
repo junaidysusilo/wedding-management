@@ -2,10 +2,12 @@
 
 @section('container')
 
+
 @if (session()->has('success'))
-    <div class="alert alert-success col-lg-9 mt-3" role="alert">
+    <div class="alert alert-success mt-3" role="alert">
         {{ session('success') }}
     </div>
+	
 @endif
 
 	<!-- begin:: Content -->
@@ -16,14 +18,14 @@
 					<i class="kt-font-brand flaticon2-line-chart"></i>
 				</span>
 				<h3 class="kt-portlet__head-title">
-					List User
+					List Category
 				</h3>
 			</div>
 			<div class="kt-portlet__head-toolbar">
 				<div class="kt-portlet__head-wrapper">
 					<div class="dropdown dropdown-inline">
-						<a href="{{ route('users.create') }}" style="text-decoration: none"><button type="button" class="btn btn-brand btn-icon-sm" >
-							<i class="flaticon2-plus"></i> Create New User
+						<a href="{{ route('categories.create') }}" style="text-decoration: none"><button type="button" class="btn btn-brand btn-icon-sm" >
+							<i class="flaticon2-plus"></i> Create New Category
 						</button></a>
 					</div>
 				</div>
@@ -43,8 +45,8 @@
 								<th data-field="Name" class="kt-datatable__cell kt-datatable__cell--sort">
 									<span style="width: 110px;">Name</span>
 								</th>
-								<th data-field="Email" class="kt-datatable__cell kt-datatable__cell--sort">
-									<span style="width: 210px;">Email</span>
+								<th data-field="Description" class="kt-datatable__cell kt-datatable__cell--sort">
+									<span style="width: 210px;">Description</span>
 								</th>
 								<th data-field="Action" data-autohide-disabled="false" class="kt-datatable__cell kt-datatable__cell--sort">
 									<span style="width: 110px;">Action</span>
@@ -53,21 +55,21 @@
 						</thead>
 						<tbody class="kt-datatable__body" style="">
 
-						@foreach ($users as $user)
+						@foreach ($categories as $category)
 						<tr data-row="0" class="kt-datatable__row" style="left: 0px;">
 							<td data-field="No" class="kt-datatable__cell">
 								<span style="width: 30px;">{{ $loop->iteration }}</span>
 							</td>
 							<td data-field="Name" class="kt-datatable__cell">
-								<span style="width: 110px;">{{ $user->name }}</span>
+								<span style="width: 110px;">{{ $category->name }}</span>
 							</td>
 							<td data-field="Email" class="kt-datatable__cell">
-								<span style="width: 210px;">{{ $user->email }}</span>
+								<span style="width: 210px;">{{ $category->description }}</span>
 							</td>
 							<td data-field="Action" data-autohide-disabled="false" class="kt-datatable__cell">
 								<span style="width: 110px;">
-									<a href="{{ route('users.edit', ['user' => $user->id]) }}" title="Edit" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
-									<form action="{{ route('users.destroy', ['user' => $user->id]) }}" method="post" class="d-inline">
+									<a href="{{ route('categories.edit', ['category' => $category->id]) }}" title="Edit" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
+									<form action="{{ route('categories.destroy', ['category' => $category->id]) }}" method="post" class="d-inline">
 										@csrf
 										@method('delete')
 										<button title="Delete" class="btn btn-sm btn-clean btn-icon btn-icon-md" onclick="return confirm('Are you sure?')"><i class="la la-trash"></i>
@@ -82,4 +84,8 @@
 		</div>
 	</div>
 	<!-- end:: Content -->
+@endsection
+
+@section('js')
+	
 @endsection

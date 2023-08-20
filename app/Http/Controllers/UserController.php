@@ -32,14 +32,7 @@ class UserController extends Controller
 
         User::create($validatedData);
 
-        return redirect('/users')->with('success', 'New user has been added');
-    }
-
-    public function show(User $user)
-    {
-        // return view('users.edit', [
-        //     'user' => $user
-        // ]);
+        return redirect(route('users.index'))->with('success', 'New user has been added');
     }
 
     public function edit(User $user)
@@ -62,13 +55,13 @@ class UserController extends Controller
         User::where('id', $user->id)
             ->update($validatedData);
 
-        return redirect('/users')->with('success', 'User has been updated');
+        return redirect(route('users.index'))->with('success', 'User has been updated');
     }
 
     public function destroy(User $user)
     {
 
         User::destroy($user->id);
-        return redirect('/users')->with('success', 'User has been deleted!');
+        return redirect(route('users.index'))->with('success', 'User has been deleted!');
     }
 }

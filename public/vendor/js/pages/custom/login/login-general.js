@@ -98,10 +98,13 @@ var KTLoginGeneral = function () {
                 url: '',
                 success: function (response, status, xhr, $form) {
                     // similate 2s delay
+                    if (response.message == 'success') {
+                        window.location.reload();
+                    }
                     setTimeout(function () {
                         btn.removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').attr('disabled', false);
                         showErrorMsg(form, 'danger', 'Incorrect username or password. Please try again.');
-                    }, 500);
+                    }, 2000);
                 }
             });
         });

@@ -59,9 +59,6 @@
                     <div class="kt-user-card__name">
                         Welcome, {{ auth()->user()->name }}
                     </div>
-                    <div class="kt-user-card__badge">
-                        <span class="btn btn-label-primary btn-sm btn-bold btn-font-md">23 messages</span>
-                    </div>
                 </div>
                 <!--end: Head -->
 
@@ -72,12 +69,8 @@
                             @csrf
                             <button type="submit" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</button>
                         </form>
-                        
-                        {{-- <a href="custom/user/login-v2.html" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a> --}}
-                        
                         @else
                         <a href="/login" class="btn btn-label btn-label-brand btn-sm btn-bold">Login</a>
-                        
                         @endauth
                     </div>
                 </div>

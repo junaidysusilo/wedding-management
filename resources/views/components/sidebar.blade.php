@@ -31,11 +31,18 @@
 		<div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
 			<div id="kt3_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown" data-ktmenu-vertical="1" data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
 				<ul class="kt-menu__nav">
-					<li class="kt-menu__item  kt-menu__item--submenu kt-menu__item--submenu-fullheight kt-menu__item--open kt-menu__item--here">
-						<a href="/" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon2-protection"></i>
+					<li class="kt-menu__item kt-menu__item--submenu
+					@if(Route::current()->action['as']=='rgpanel') kt-menu__item--here @endif">
+						<a href="{{ route('rgpanel') }}" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon-home-2"></i>
 					</li>
-					<li class="kt-menu__item  kt-menu__item--submenu">
-						<a href="/users" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon-users"></i></a>
+					<li class="kt-menu__item  kt-menu__item--submenu mb-5 @if(Route::current()->action['as']=='users.index') kt-menu__item--here @endif">
+						<a href="{{ route('users.index') }}" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon2-group"></i></a>
+					</li>
+					<li class="kt-menu__item  kt-menu__item--submenu mb-4 @if(Route::current()->action['as']=='categories.index') kt-menu__item--here @endif">
+						<a href="{{ route('categories.index') }}" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon-squares-4"></i></a>
+					</li>
+					<li class="kt-menu__item  kt-menu__item--submenu @if(Route::current()->action['as']=='categories.index') kt-menu__item--here @endif">
+						<a href="{{ route('tenants.index') }}" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon-users"></i></a>
 					</li>
 				</ul>
 			</div>
