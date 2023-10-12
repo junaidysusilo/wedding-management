@@ -26,7 +26,7 @@
             </div>
         <div class="kt-portlet__foot">
             <div class="kt-form__actions">
-                <button type="submit" class="js-btn-submit btn btn-primary">Edit</button>
+                <button type="submit" class="js-btn-edit btn btn-primary">Edit</button>
                 <a href="{{ route('categories.update') }}" class="btn btn-secondary">Back</a>
             </div>
         </div>

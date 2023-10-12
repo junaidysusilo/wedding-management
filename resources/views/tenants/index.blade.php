@@ -83,3 +83,7 @@
 	</div>
 	<!-- end:: Content -->
 @endsection
+
+@section('js')
+	
+@endsection

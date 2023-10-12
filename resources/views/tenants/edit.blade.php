@@ -25,13 +25,14 @@
                 <input type="email" class="form-control" name="email" id="email" value="{{ old('email', $tenant->email) }}" placeholder="Enter email">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" name="password" id="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" id="password" placeholder="Password">
             </div>
         <div class="kt-portlet__foot">
             <div class="kt-form__actions">
-                <button type="submit" class="btn btn-primary">Edit</button>
+                <button type="submit" class="btn btn-primary">Save</button>
                 <a href="{{ route('tenants.index') }}" class="btn btn-secondary">Back</a>
+                <a href="{{ route('tenants.grooms.edit',['tenant'=>$tenant->id,'groom'=>$tenant->groom?->id]) }}" class="btn btn-primary">Next</a>
             </div>
         </div>
     </form>

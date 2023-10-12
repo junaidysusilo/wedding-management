@@ -7,7 +7,7 @@
     <div class="kt-header-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_header_menu_wrapper">
         <div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout- ">
             <ul class="kt-menu__nav ">
-                <li class="kt-menu__item  kt-menu__item--active " aria-haspopup="true"><a href="/" class="kt-menu__link "><span class="kt-menu__link-text">Dashboard</span></a></li>
+                <li class="kt-menu__item  kt-menu__item--active " aria-haspopup="true"><a href="{{ route('rgpanel') }}" class="kt-menu__link "><span class="kt-menu__link-text">Dashboard</span></a></li>
                 </li>
             </ul>
         </div>

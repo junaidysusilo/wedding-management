@@ -24,13 +24,13 @@
                 <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="Enter email">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" name="password" id="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" id="password" placeholder="Password">
             </div>
-        <div class="kt-portlet__foot">
+        <div class="kt-portlet__foot d-flex justify-content-end">
             <div class="kt-form__actions">
-                <button type="submit" class="btn btn-primary">Submit</button>
                 <a href="{{ route('tenants.index') }}" class="btn btn-secondary">Back</a>
+                <button type="submit" class="js-btn-next btn btn-primary">Save & Next</button>
             </div>
         </div>
     </form>

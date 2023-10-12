@@ -31,6 +31,7 @@
 		<div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
 			<div id="kt3_aside_menu" class="kt-aside-menu  kt-aside-menu--dropdown" data-ktmenu-vertical="1" data-ktmenu-dropdown="1" data-ktmenu-scroll="0">
 				<ul class="kt-menu__nav">
+					<li class="nav-item mb-3" data-toggle="tooltip" data-placement="right" data-container="body">
 					<li class="kt-menu__item kt-menu__item--submenu
 					@if(Route::current()->action['as']=='rgpanel') kt-menu__item--here @endif">
 						<a href="{{ route('rgpanel') }}" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon-home-2"></i>
@@ -41,7 +42,7 @@
 					<li class="kt-menu__item  kt-menu__item--submenu mb-4 @if(Route::current()->action['as']=='categories.index') kt-menu__item--here @endif">
 						<a href="{{ route('categories.index') }}" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon-squares-4"></i></a>
 					</li>
-					<li class="kt-menu__item  kt-menu__item--submenu @if(Route::current()->action['as']=='categories.index') kt-menu__item--here @endif">
+					<li class="kt-menu__item  kt-menu__item--submenu @if(Route::current()->action['as']=='tenants.index') kt-menu__item--here @endif">
 						<a href="{{ route('tenants.index') }}" class="kt-menu__link kt-menu__toggle"><i class="kt-menu__link-icon flaticon-users"></i></a>
 					</li>
 				</ul>
